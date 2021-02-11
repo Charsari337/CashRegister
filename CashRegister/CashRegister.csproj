@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\201159__kiddpark__cash-register.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\192178__sarcasticbracket__cash-register.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25423__andrewweathers__register.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\184438__capslok__cash-register-fake.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,6 +29,7 @@ namespace CashRegister
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace CashRegister
             this.changeLabel = new System.Windows.Forms.Label();
             this.receiptButt = new System.Windows.Forms.Button();
             this.receiptLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +54,7 @@ namespace CashRegister
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(-1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(800, 30);
+            this.label1.Size = new System.Drawing.Size(684, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Morshu\'s Shop";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -96,6 +98,8 @@ namespace CashRegister
             this.textBoxLan.Name = "textBoxLan";
             this.textBoxLan.Size = new System.Drawing.Size(40, 20);
             this.textBoxLan.TabIndex = 4;
+            this.textBoxLan.Text = "0";
+            this.textBoxLan.Click += new System.EventHandler(this.textBoxLan_Click);
             // 
             // textBoxRope
             // 
@@ -103,6 +107,8 @@ namespace CashRegister
             this.textBoxRope.Name = "textBoxRope";
             this.textBoxRope.Size = new System.Drawing.Size(40, 20);
             this.textBoxRope.TabIndex = 5;
+            this.textBoxRope.Text = "0";
+            this.textBoxRope.Click += new System.EventHandler(this.textBoxRope_Click);
             // 
             // textBoxBomb
             // 
@@ -110,11 +116,14 @@ namespace CashRegister
             this.textBoxBomb.Name = "textBoxBomb";
             this.textBoxBomb.Size = new System.Drawing.Size(40, 20);
             this.textBoxBomb.TabIndex = 6;
+            this.textBoxBomb.Text = "0";
+            this.textBoxBomb.Click += new System.EventHandler(this.textBoxBomb_Click);
             // 
             // totalsLabel
             // 
             this.totalsLabel.BackColor = System.Drawing.Color.Linen;
-            this.totalsLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.totalsLabel.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalsLabel.Location = new System.Drawing.Point(12, 177);
             this.totalsLabel.Name = "totalsLabel";
             this.totalsLabel.Size = new System.Drawing.Size(185, 116);
@@ -150,6 +159,7 @@ namespace CashRegister
             this.textBoxTend.Name = "textBoxTend";
             this.textBoxTend.Size = new System.Drawing.Size(87, 20);
             this.textBoxTend.TabIndex = 11;
+            this.textBoxTend.Click += new System.EventHandler(this.textBoxTend_Click);
             // 
             // calcChangeButt
             // 
@@ -167,6 +177,7 @@ namespace CashRegister
             // changeLabel
             // 
             this.changeLabel.BackColor = System.Drawing.Color.Linen;
+            this.changeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.changeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeLabel.Location = new System.Drawing.Point(12, 393);
             this.changeLabel.Name = "changeLabel";
@@ -191,11 +202,26 @@ namespace CashRegister
             // receiptLabel
             // 
             this.receiptLabel.BackColor = System.Drawing.Color.Linen;
-            this.receiptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.receiptLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.receiptLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptLabel.Location = new System.Drawing.Point(228, 49);
             this.receiptLabel.Name = "receiptLabel";
             this.receiptLabel.Size = new System.Drawing.Size(444, 357);
             this.receiptLabel.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Sienna;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(350, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 38);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "New Order";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -203,6 +229,7 @@ namespace CashRegister
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(684, 481);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.receiptButt);
             this.Controls.Add(this.changeLabel);
@@ -218,8 +245,9 @@ namespace CashRegister
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Cash Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,6 +270,7 @@ namespace CashRegister
         private System.Windows.Forms.Label changeLabel;
         private System.Windows.Forms.Button receiptButt;
         private System.Windows.Forms.Label receiptLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
