@@ -13,7 +13,9 @@ using System.Media;
 
 namespace CashRegister
 {
-    
+    //Charles Sarichith
+    //Cash Register
+    //Feb 11
 
     public partial class Form1 : Form
     {
